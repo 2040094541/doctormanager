@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>体检套餐预约</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- 配置Tailwind自定义颜色 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#36D399',
+            neutral: '#F3F4F6',
+            'neutral-dark': '#4B5563'
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .card-shadow {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .btn-hover {
+        @apply transform transition-all duration-300 hover:scale-105;
+      }
+    }
+  </style>
+</head>
+<body class="font-inter bg-gray-50 min-h-screen">
+<!-- 导航栏 -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+      <i class="fa fa-heartbeat text-primary text-2xl"></i>
+      <span class="text-xl font-bold text-primary">健康体检预约平台</span>
+    </div>
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="#" class="text-neutral-dark hover:text-primary transition-colors">首页</a>
+      <a href="#" class="text-neutral-dark hover:text-primary transition-colors">套餐列表</a>
+      <a href="#" class="text-neutral-dark hover:text-primary transition-colors">预约记录</a>
+      <a href="#" class="text-neutral-dark hover:text-primary transition-colors">体检指南</a>
+      <!-- 移除了登录按钮 -->
+    </div>
+    <button class="md:hidden text-neutral-dark text-xl">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- 主内容区 -->
+<main class="container mx-auto px-4 py-8">
+  <!-- 页面标题 -->
+  <div class="mb-8 text-center">
+    <h1 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-gray-800">选择您需要的体检套餐</h1>
+    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
+      我们提供多种专业体检套餐，满足不同年龄、性别和健康需求。选择适合您的套餐，开始您的健康之旅。
+    </p>
+  </div>
+
+  <!-- 套餐筛选器 -->
+  <div class="bg-white rounded-lg p-4 shadow-sm mb-8">
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="flex-1">
+        <label class="block text-sm font-medium text-gray-700 mb-1">套餐类型</label>
+        <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50">
+          <option value="">全部类型</option>
+          <option value="basic">基础套餐</option>
+          <option value="comprehensive">全面体检</option>
+          <option value="special">专项检查</option>
+        </select>
+      </div>
+      <div class="flex-1">
+        <label class="block text-sm font-medium text-gray-700 mb-1">价格范围</label>
+        <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50">
+          <option value="">全部价格</option>
+          <option value="0-500">500元以下</option>
+          <option value="500-1000">500-1000元</option>
+          <option value="1000-2000">1000-2000元</option>
+          <option value="2000+">2000元以上</option>
+        </select>
+      </div>
+      <div class="flex-1">
+        <label class="block text-sm font-medium text-gray-700 mb-1">适用人群</label>
+        <select class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50">
+          <option value="">全部人群</option>
+          <option value="adult">成年人</option>
+          <option value="elder">老年人</option>
+          <option value="women">女性专项</option>
+          <option value="men">男性专项</option>
+          <option value="child">儿童</option>
+        </select>
+      </div>
+      <div class="flex items-end">
+        <button class="w-full md:w-auto bg-primary text-white px-6 py-2 rounded-md hover:bg-primary/90 transition-colors btn-hover">
+          <i class="fa fa-search mr-2"></i>筛选
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 套餐列表 -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- 套餐卡片1 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow card-shadow">
+      <div class="h-48 overflow-hidden">
+        <img src="https://picsum.photos/seed/checkup1/600/400" alt="基础体检套餐" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="text-xl font-bold text-gray-800">基础体检套餐</h3>
+          <span class="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium">热门</span>
+        </div>
+        <p class="text-gray-600 mb-4">包含常规身体检查、血液检查、尿液检查等基本项目，适合健康人群年度体检。</p>
+        <div class="flex items-center text-gray-500 text-sm mb-4">
+          <span class="mr-4"><i class="fa fa-user-md mr-1"></i> 15项检查</span>
+          <span class="mr-4"><i class="fa fa-clock-o mr-1"></i> 约90分钟</span>
+          <span><i class="fa fa-hospital-o mr-1"></i> 三甲医院</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-gray-400 line-through">¥899</span>
+            <span class="text-primary text-2xl font-bold ml-2">¥599</span>
+          </div>
+          <button class="bg-primary text-white px-5 py-2 rounded-md hover:bg-primary/90 transition-colors btn-hover" onclick="openReservationModal(1, '基础体检套餐', 599)">
+            立即预约
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 套餐卡片2 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow card-shadow">
+      <div class="h-48 overflow-hidden">
+        <img src="https://picsum.photos/seed/checkup2/600/400" alt="全面体检套餐" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="text-xl font-bold text-gray-800">全面体检套餐</h3>
+          <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">推荐</span>
+        </div>
+        <p class="text-gray-600 mb-4">包含基础项目及心脏、肺部、腹部等深度检查，提供全面健康评估。</p>
+        <div class="flex items-center text-gray-500 text-sm mb-4">
+          <span class="mr-4"><i class="fa fa-user-md mr-1"></i> 30项检查</span>
+          <span class="mr-4"><i class="fa fa-clock-o mr-1"></i> 约150分钟</span>
+          <span><i class="fa fa-hospital-o mr-1"></i> 三甲医院</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-gray-400 line-through">¥1899</span>
+            <span class="text-primary text-2xl font-bold ml-2">¥1299</span>
+          </div>
+          <button class="bg-primary text-white px-5 py-2 rounded-md hover:bg-primary/90 transition-colors btn-hover" onclick="openReservationModal(2, '全面体检套餐', 1299)">
+            立即预约
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 套餐卡片3 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow card-shadow">
+      <div class="h-48 overflow-hidden">
+        <img src="https://picsum.photos/seed/checkup3/600/400" alt="心脑血管专项" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="text-xl font-bold text-gray-800">心脑血管专项</h3>
+          <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">专项</span>
+        </div>
+        <p class="text-gray-600 mb-4">专注于心脑血管系统检查，包含心电图、心脏超声、动脉硬化检测等项目。</p>
+        <div class="flex items-center text-gray-500 text-sm mb-4">
+          <span class="mr-4"><i class="fa fa-user-md mr-1"></i> 20项检查</span>
+          <span class="mr-4"><i class="fa fa-clock-o mr-1"></i> 约120分钟</span>
+          <span><i class="fa fa-hospital-o mr-1"></i> 三甲医院</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-gray-400 line-through">¥1599</span>
+            <span class="text-primary text-2xl font-bold ml-2">¥999</span>
+          </div>
+          <button class="bg-primary text-white px-5 py-2 rounded-md hover:bg-primary/90 transition-colors btn-hover" onclick="openReservationModal(3, '心脑血管专项', 999)">
+            立即预约
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 套餐卡片4 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow card-shadow">
+      <div class="h-48 overflow-hidden">
+        <img src="https://picsum.photos/seed/checkup4/600/400" alt="女性专项套餐" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="text-xl font-bold text-gray-800">女性专项套餐</h3>
+          <span class="bg-pink-200 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">女性</span>
+        </div>
+        <p class="text-gray-600 mb-4">针对女性健康需求设计，包含乳腺、妇科、激素水平等专项检查。</p>
+        <div class="flex items-center text-gray-500 text-sm mb-4">
+          <span class="mr-4"><i class="fa fa-user-md mr-1"></i> 25项检查</span>
+          <span class="mr-4"><i class="fa fa-clock-o mr-1"></i> 约130分钟</span>
+          <span><i class="fa fa-hospital-o mr-1"></i> 三甲医院</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-gray-400 line-through">¥1699</span>
+            <span class="text-primary text-2xl font-bold ml-2">¥1199</span>
+          </div>
+          <button class="bg-primary text-white px-5 py-2 rounded-md hover:bg-primary/90 transition-colors btn-hover" onclick="openReservationModal(4, '女性专项套餐', 1199)">
+            立即预约
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 套餐卡片5 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow card-shadow">
+      <div class="h-48 overflow-hidden">
+        <img src="https://picsum.photos/seed/checkup5/600/400" alt="男性专项套餐" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="text-xl font-bold text-gray-800">男性专项套餐</h3>
+          <span class="bg-blue-200 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">男性</span>
+        </div>
+        <p class="text-gray-600 mb-4">针对男性健康需求设计，包含前列腺、生殖系统、激素水平等专项检查。</p>
+        <div class="flex items-center text-gray-500 text-sm mb-4">
+          <span class="mr-4"><i class="fa fa-user-md mr-1"></i> 22项检查</span>
+          <span class="mr-4"><i class="fa fa-clock-o mr-1"></i> 约120分钟</span>
+          <span><i class="fa fa-hospital-o mr-1"></i> 三甲医院</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-gray-400 line-through">¥1499</span>
+            <span class="text-primary text-2xl font-bold ml-2">¥999</span>
+          </div>
+          <button class="bg-primary text-white px-5 py-2 rounded-md hover:bg-primary/90 transition-colors btn-hover" onclick="openReservationModal(5, '男性专项套餐', 999)">
+            立即预约
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 套餐卡片6 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow card-shadow">
+      <div class="h-48 overflow-hidden">
+        <img src="https://picsum.photos/seed/checkup6/600/400" alt="中老年体检套餐" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-3">
+          <h3 class="text-xl font-bold text-gray-800">中老年体检套餐</h3>
+          <span class="bg-yellow-200 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">中老年</span>
+        </div>
+        <p class="text-gray-600 mb-4">针对中老年人常见疾病风险设计，包含骨密度、心脑血管、糖尿病筛查等项目。</p>
+        <div class="flex items-center text-gray-500 text-sm mb-4">
+          <span class="mr-4"><i class="fa fa-user-md mr-1"></i> 35项检查</span>
+          <span class="mr-4"><i class="fa fa-clock-o mr-1"></i> 约180分钟</span>
+          <span><i class="fa fa-hospital-o mr-1"></i> 三甲医院</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-gray-400 line-through">¥2299</span>
+            <span class="text-primary text-2xl font-bold ml-2">¥1699</span>
+          </div>
+          <button class="bg-primary text-white px-5 py-2 rounded-md hover:bg-primary/90 transition-colors btn-hover" onclick="openReservationModal(6, '中老年体检套餐', 1699)">
+            立即预约
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分页控件 -->
+  <div class="mt-12 flex justify-center">
+    <nav class="inline-flex rounded-md shadow-sm">
+      <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+        <span class="sr-only">上一页</span>
+        <i class="fa fa-chevron-left"></i>
+      </a>
+      <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-primary text-sm font-medium text-white">
+        1
+      </a>
+      <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+        2
+      </a>
+      <a href="#" class="px-3 py-2 border-t border-b border-r border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+        3
+      </a>
+      <span class="px-3 py-2 border-t border-b border-r border-gray-300 bg-white text-sm font-medium text-gray-700">
+          ...
+        </span>
+      <a href="#" class="px-3 py-2 border-t border-b border-r border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+        8
+      </a>
+      <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+        <span class="sr-only">下一页</span>
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </nav>
+  </div>
+</main>
+
+<!-- 页脚 -->
+<footer class="bg-gray-800 text-white mt-16">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4">健康体检预约平台</h3>
+        <p class="text-gray-400">提供专业、便捷的体检预约服务，让健康管理更简单。</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fa fa-weibo"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fa fa-wechat"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fa fa-qq"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">套餐列表</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">预约记录</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">体检指南</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">帮助中心</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">预约流程</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">体检须知</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition-colors">报告解读</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">联系我们</h4>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <i class="fa fa-map-marker mr-2 text-gray-400"></i>
+            <span class="text-gray-400">北京市海淀区健康路88号</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fa fa-phone mr-2 text-gray-400"></i>
+            <span class="text-gray-400">400-123-4567</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fa fa-envelope mr-2 text-gray-400"></i>
+            <span class="text-gray-400">service@healthcheck.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+      <p>© 2025 健康体检预约平台 版权所有</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 预约模态框 -->
+<div id="reservationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg w-full max-w-md p-6 transform transition-all">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-bold text-gray-800" id="modalTitle">预约体检套餐</h3>
+      <button onclick="closeReservationModal()" class="text-gray-500 hover:text-gray-700">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+    <form id="reservationForm">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">套餐名称</label>
+        <input type="text" id="packageName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" readonly>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">预约日期</label>
+        <input type="date" id="reservationDate" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">预约时间</label>
+        <select id="reservationTime" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+          <option value="">请选择时间段</option>
+          <option value="08:00-09:00">08:00-09:00</option>
+          <option value="09:00-10:00">09:00-10:00</option>
+          <option value="10:00-11:00">10:00-11:00</option>
+          <option value="13:00-14:00">13:00-14:00</option>
+          <option value="14:00-15:00">14:00-15:00</option>
+          <option value="15:00-16:00">15:00-16:00</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">体检人姓名</label>
+        <input type="text" id="personName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">联系电话</label>
+        <input type="tel" id="phoneNumber" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" required>
+      </div>
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700 mb-1">备注信息</label>
+        <textarea id="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
+      </div>
+      <div class="flex justify-end space-x-3">
+        <button type="button" onclick="closeReservationModal()" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">取消</button>
+        <button type="submit" class="px-5 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors btn-hover">确认预约</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 预约成功提示 -->
+<div id="successAlert" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-md shadow-lg transform translate-y-20 opacity-0 transition-all duration-500 z-50 flex items-center">
+  <i class="fa fa-check-circle mr-2 text-xl"></i>
+  <span>预约成功！预约编号：<span id="reservationNumber"></span></span>
+</div>
+
+<script>
+  // 打开预约模态框
+  function openReservationModal(packageId, packageName, price) {
+    document.getElementById('packageName').value = packageName;
+    document.getElementById('reservationModal').classList.remove('hidden');
+
+    // 设置最小预约日期为明天
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const minDate = tomorrow.toISOString().split('T')[0];
+    document.getElementById('reservationDate').min = minDate;
+
+    // 防止页面滚动
+    document.body.style.overflow = 'hidden';
+  }
+
+  // 关闭预约模态框
+  function closeReservationModal() {
+    document.getElementById('reservationModal').classList.add('hidden');
+    document.getElementById('reservationForm').reset();
+
+    // 恢复页面滚动
+    document.body.style.overflow = '';
+  }
+
+  // 提交预约表单
+  document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 模拟提交到服务器
+    // 实际项目中应使用fetch或axios发送数据到后端API
+
+    // 生成随机预约编号
+    const reservationNumber = 'RES' + new Date().getFullYear()
+            + String(new Date().getMonth() + 1).padStart(2, '0')
+            + String(new Date().getDate()).padStart(2, '0')
+            + Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+
+    // 显示成功提示
+    document.getElementById('reservationNumber').textContent = reservationNumber;
+    const successAlert = document.getElementById('successAlert');
+    successAlert.classList.remove('translate-y-20', 'opacity-0');
+
+    // 3秒后隐藏提示
+    setTimeout(() => {
+      successAlert.classList.add('translate-y-20', 'opacity-0');
+    }, 3000);
+
+    // 关闭模态框
+    closeReservationModal();
+  });
+
+  // 点击模态框外部关闭
+  document.getElementById('reservationModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeReservationModal();
+    }
+  });
+
+  // 页面加载时设置当前日期
+  window.addEventListener('load', function() {
+    // 设置导航栏滚动效果
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 10) {
+        nav.classList.add('py-2');
+        nav.classList.remove('py-3');
+      } else {
+        nav.classList.add('py-3');
+        nav.classList.remove('py-2');
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.wl.springboot_pe_2211.service.impl;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -47,6 +48,9 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
     private CheckgroupMapper checkgroupMapper;
     @Resource
     private CheckitemMapper checkitemMapper;
+
+    @TableLogic // MyBatis-Plus逻辑删除注解
+    private Integer deleted; // 1表示已删除，0表示未删除
 
     @Transactional
     @Override

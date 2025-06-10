@@ -1,5 +1,4 @@
 package com.wl.springboot_pe_2211.entity;
-
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -27,5 +26,7 @@ public class SetmealCheckgroup implements Serializable {
 
     private Integer checkgroupId;
 
+    // setDeleted 方法
+    // 对应的 getter 方法（Lombok 的 @Data 会自动生成，但也可以显式写出）
 
 }

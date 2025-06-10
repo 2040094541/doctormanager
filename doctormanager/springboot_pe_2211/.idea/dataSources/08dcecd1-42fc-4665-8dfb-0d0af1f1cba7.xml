@@ -2,10 +2,9 @@
 <dataSource name="@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.53">
     <root id="1">
-      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <ServerVersion>5.7.12</ServerVersion>
+      <ServerVersion>8.0.34</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -833,7 +832,13 @@
     <table id="262" parent="233" name="t_role"/>
     <table id="263" parent="233" name="t_role_menu"/>
     <table id="264" parent="233" name="t_role_permission"/>
-    <table id="265" parent="233" name="t_setmeal"/>
+    <table id="265" parent="233" name="t_setmeal">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <Options>row_format
+COMPACT</Options>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
     <table id="266" parent="233" name="t_setmeal_checkgroup"/>
     <table id="267" parent="233" name="t_user"/>
     <table id="268" parent="233" name="t_user_role"/>
@@ -1572,10 +1577,10 @@ menu_id</UnderlyingIndexColNames>
 permission_id</UnderlyingIndexColNames>
     </key>
     <column id="429" parent="265" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>26</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int(11)|0s</StoredType>
+      <StoredType>int|0s</StoredType>
     </column>
     <column id="430" parent="265" name="name">
       <Position>2</Position>
@@ -1613,107 +1618,112 @@ permission_id</UnderlyingIndexColNames>
       <Position>10</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <key id="439" parent="265" name="PRIMARY">
+    <index id="439" parent="265" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="440" parent="265" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="440" parent="266" name="setmeal_id">
+    <column id="441" parent="266" name="setmeal_id">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="441" parent="266" name="checkgroup_id">
+    <column id="442" parent="266" name="checkgroup_id">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="442" parent="266" name="setmeal_key">
+    <foreign-key id="443" parent="266" name="setmeal_key">
       <ColNames>setmeal_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_setmeal</RefTableName>
     </foreign-key>
-    <foreign-key id="443" parent="266" name="checkgroup_key">
+    <foreign-key id="444" parent="266" name="checkgroup_key">
       <ColNames>checkgroup_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_checkgroup</RefTableName>
     </foreign-key>
-    <index id="444" parent="266" name="checkgroup_key">
+    <index id="445" parent="266" name="checkgroup_key">
       <ColNames>checkgroup_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="445" parent="266" name="PRIMARY">
+    <key id="446" parent="266" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexColNames>setmeal_id
 checkgroup_id</UnderlyingIndexColNames>
     </key>
-    <column id="446" parent="267" name="id">
+    <column id="447" parent="267" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="447" parent="267" name="birthday">
+    <column id="448" parent="267" name="birthday">
       <Position>2</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="448" parent="267" name="gender">
+    <column id="449" parent="267" name="gender">
       <Position>3</Position>
       <StoredType>varchar(1)|0s</StoredType>
     </column>
-    <column id="449" parent="267" name="username">
+    <column id="450" parent="267" name="username">
       <Position>4</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="450" parent="267" name="password">
+    <column id="451" parent="267" name="password">
       <Position>5</Position>
       <StoredType>varchar(256)|0s</StoredType>
     </column>
-    <column id="451" parent="267" name="remark">
+    <column id="452" parent="267" name="remark">
       <Position>6</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="452" parent="267" name="station">
+    <column id="453" parent="267" name="station">
       <Position>7</Position>
       <StoredType>varchar(1)|0s</StoredType>
     </column>
-    <column id="453" parent="267" name="telephone">
+    <column id="454" parent="267" name="telephone">
       <Position>8</Position>
       <StoredType>varchar(11)|0s</StoredType>
     </column>
-    <key id="454" parent="267" name="PRIMARY">
+    <key id="455" parent="267" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="455" parent="268" name="user_id">
+    <column id="456" parent="268" name="user_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="456" parent="268" name="role_id">
+    <column id="457" parent="268" name="role_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="457" parent="268" name="FK_Reference_7">
+    <foreign-key id="458" parent="268" name="FK_Reference_7">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_user</RefTableName>
     </foreign-key>
-    <foreign-key id="458" parent="268" name="FK_Reference_8">
+    <foreign-key id="459" parent="268" name="FK_Reference_8">
       <ColNames>role_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_role</RefTableName>
     </foreign-key>
-    <index id="459" parent="268" name="FK_Reference_8">
+    <index id="460" parent="268" name="FK_Reference_8">
       <ColNames>role_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="460" parent="268" name="PRIMARY">
+    <key id="461" parent="268" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexColNames>user_id

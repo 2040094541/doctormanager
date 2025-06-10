@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会员档案管理系统</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --success-color: #2ecc71;
+      --warning-color: #f39c12;
+      --info-color: #1abc9c;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      padding-bottom: 40px;
+    }
+
+    .header {
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .card-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .card-header {
+      background: linear-gradient(90deg, var(--primary-color), #4a9fe9);
+      color: white;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .card-header i {
+      font-size: 1.8rem;
+    }
+
+    .card-header h2 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .search-bar {
+      background: var(--light-bg);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-left: 4px solid var(--info-color);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .search-title {
+      color: var(--info-color);
+      font-weight: 700;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, var(--primary-color), #2980b9);
+      border: none;
+    }
+
+    .btn-success {
+      background: linear-gradient(to right, var(--success-color), #27ae60);
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .status-badge {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .status-normal {
+      background-color: rgba(46, 204, 113, 0.15);
+      color: var(--success-color);
+    }
+
+    .status-frozen {
+      background-color: rgba(231, 76, 60, 0.15);
+      color: var(--accent-color);
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .table {
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 1000px;
+    }
+
+    .table thead th {
+      background: linear-gradient(to bottom, var(--primary-color), #2980b9);
+      color: white;
+      padding: 15px 20px;
+      font-weight: 600;
+      border: none;
+    }
+
+    .table tbody tr {
+      transition: all 0.2s;
+    }
+
+    .table tbody tr:nth-child(even) {
+      background-color: rgba(52, 152, 219, 0.05);
+    }
+
+    .table tbody tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .table tbody td {
+      padding: 15px 20px;
+      vertical-align: middle;
+      border-bottom: 1px solid #e1e5eb;
+    }
+
+    .action-btn {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      min-width: auto;
+      border-radius: 6px;
+    }
+
+    .btn-warning {
+      background: linear-gradient(to right, var(--warning-color), #e67e22);
+      border: none;
+    }
+
+    .btn-danger {
+      background: linear-gradient(to right, var(--accent-color), #c0392b);
+      border: none;
+    }
+
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .pagination {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .page-item {
+      margin: 0 2px;
+    }
+
+    .page-link {
+      padding: 8px 16px;
+      color: var(--primary-color);
+      border: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .page-item.active .page-link {
+      background: linear-gradient(to right, var(--primary-color), #2980b9);
+      color: white;
+      border: none;
+    }
+
+    .page-item:not(.active) .page-link:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+
+    .page-item.disabled .page-link {
+      color: #ccc;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      margin-bottom: 20px;
+      border-top: 4px solid var(--primary-color);
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 10px 0;
+    }
+
+    .stat-label {
+      color: var(--secondary-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+
+    .name-cell {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .empty-state i {
+      font-size: 5rem;
+      color: #e1e5eb;
+      margin-bottom: 20px;
+    }
+
+    .empty-state h4 {
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    /* 模态框样式 */
+    .modal-content {
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+      background: linear-gradient(90deg, var(--primary-color), #4a9fe9);
+      color: white;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .modal-footer {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    @media (max-width: 992px) {
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .table-container {
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .card-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .search-bar .col-md-3 {
+        margin-bottom: 15px;
+      }
+
+      .action-btn {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="header">
+  <h1><i class="fas fa-address-book me-2"></i>会员档案管理系统</h1>
+</div>
+
+<div class="container">
+  <div class="card-container">
+    <div class="card-header">
+      <i class="fas fa-users"></i>
+      <h2 class="mb-0">会员列表管理</h2>
+    </div>
+
+    <div class="card-body">
+      <div id="app">
+        <!-- 统计卡片 -->
+        <div class="row mb-4">
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-label">会员总数</div>
+              <div class="stat-value">{{ totalMembers }}</div>
+              <div><i class="fas fa-user-friends fa-2x text-primary"></i></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-label">正常会员</div>
+              <div class="stat-value">{{ normalMembers }}</div>
+              <div><i class="fas fa-user-check fa-2x text-success"></i></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-label">冻结会员</div>
+              <div class="stat-value">{{ frozenMembers }}</div>
+              <div><i class="fas fa-user-slash fa-2x text-danger"></i></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <div class="stat-label">本月新增</div>
+              <div class="stat-value">{{ newMembersThisMonth }}</div>
+              <div><i class="fas fa-chart-line fa-2x text-info"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 搜索区域 -->
+        <div class="search-bar">
+          <h4 class="search-title"><i class="fas fa-search"></i> 会员查询</h4>
+          <input type="text" v-model="searchName" placeholder="会员姓名" class="form-control form-control-lg">
+          <input type="text" v-model="searchPhone" placeholder="手机号码" class="form-control form-control-lg">
+          <select v-model="searchStatus" class="form-select form-select-lg">
+            <option value="">全部状态</option>
+            <option value="1">正常</option>
+            <option value="0">冻结</option>
+          </select>
+          <button @click="searchMembers" class="btn btn-primary me-2">
+            <i class="fas fa-search me-1"></i>搜索
+          </button>
+          <button @click="openAddMemberModal" class="btn btn-success">
+            <i class="fas fa-plus me-1"></i>新增会员
+          </button>
+        </div>
+
+        <!-- 会员列表 -->
+        <div class="table-container">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>姓名</th>
+              <th>性别</th>
+              <th>年龄</th>
+              <th>手机号码</th>
+              <th>注册日期</th>
+              <th>会员状态</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="member in filteredMembers" :key="member.id">
+              <td>{{ member.id }}</td>
+              <td>
+                <div class="name-cell">
+                  <div class="avatar">{{ member.name.charAt(0) }}</div>
+                  {{ member.name }}
+                </div>
+              </td>
+              <td>{{ member.sex === '1' ? '男' : '女' }}</td>
+              <td>{{ member.age }}</td>
+              <td>{{ member.phone }}</td>
+              <td>{{ member.regtime }}</td>
+              <td>
+                                        <span v-if="member.status === '1'" class="status-badge status-normal">
+                                            <i class="fas fa-check-circle me-1"></i>正常
+                                        </span>
+                <span v-else class="status-badge status-frozen">
+                                            <i class="fas fa-ban me-1"></i>冻结
+                                        </span>
+              </td>
+              <td>
+                <div class="action-btn">
+                  <button @click="openEditMemberModal(member)" class="btn btn-warning btn-sm">
+                    <i class="fas fa-edit me-1"></i>编辑
+                  </button>
+                  <button @click="deleteMember(member.id)" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash-alt me-1"></i>删除
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr v-if="filteredMembers.length === 0">
+              <td colspan="8">
+                <div class="empty-state">
+                  <i class="fas fa-user-slash"></i>
+                  <h4>未找到匹配的会员记录</h4>
+                  <p>请尝试不同的搜索条件</p>
+                  <button @click="resetSearch" class="btn btn-primary mt-3">
+                    <i class="fas fa-redo me-1"></i>重置搜索
+                  </button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 分页 -->
+        <div class="pagination-container">
+          <ul class="pagination">
+            <li class="page-item" :class="{ disabled: currentPage === 1 }">
+              <a class="page-link" @click="prevPage">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </li>
+            <li class="page-item" v-for="page in visiblePages" :key="page"
+                :class="{ active: currentPage === page }">
+              <a class="page-link" @click="goToPage(page)">{{ page }}</a>
+            </li>
+            <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+              <a class="page-link" @click="nextPage">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 新增会员模态框 -->
+        <div class="modal fade" id="addMemberModal" tabindex="-1" aria-labelledby="addMemberModalLabel"
+             aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="addMemberModalLabel">新增会员</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="addName" class="form-label">姓名</label>
+                    <input type="text" v-model="newMember.name" class="form-control"
+                           id="addName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="addSex" class="form-label">性别</label>
+                    <select v-model="newMember.sex" class="form-select" id="addSex">
+                      <option value="1">男</option>
+                      <option value="0">女</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="addAge" class="form-label">年龄</label>
+                    <input type="number" v-model="newMember.age" class="form-control"
+                           id="addAge">
+                  </div>
+                  <div class="mb-3">
+                    <label for="addPhone" class="form-label">手机号码</label>
+                    <input type="text" v-model="newMember.phone" class="form-control"
+                           id="addPhone">
+                  </div>
+                  <div class="mb-3">
+                    <label for="addStatus" class="form-label">会员状态</label>
+                    <select v-model="newMember.status" class="form-select" id="addStatus">
+                      <option value="1">正常</option>
+                      <option value="0">冻结</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" @click="saveNewMember">保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 编辑会员模态框 -->
+        <div class="modal fade" id="editMemberModal" tabindex="-1" aria-labelledby="editMemberModalLabel"
+             aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editMemberModalLabel">编辑会员</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="editName" class="form-label">姓名</label>
+                    <input type="text" v-model="editedMember.name" class="form-control"
+                           id="editName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="editSex" class="form-label">性别</label>
+                    <select v-model="editedMember.sex" class="form-select" id="editSex">
+                      <option value="1">男</option>
+                      <option value="0">女</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="editAge" class="form-label">年龄</label>
+                    <input type="number" v-model="editedMember.age" class="form-control"
+                           id="editAge">
+                  </div>
+                  <div class="mb-3">
+                    <label for="editPhone" class="form-label">手机号码</label>
+                    <input type="text" v-model="editedMember.phone" class="form-control"
+                           id="editPhone">
+                  </div>
+                  <div class="mb-3">
+                    <label for="editStatus" class="form-label">会员状态</label>
+                    <select v-model="editedMember.status" class="form-select" id="editStatus">
+                      <option value="1">正常</option>
+                      <option value="0">冻结</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" @click="saveEditedMember">保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>会员档案管理系统 &copy; 2023 版权所有 | 当前版本: 3.2.1</p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      memberList: [
+        { id: 1001, name: '张伟', sex: '1', age: 32, phone: '13800138000', regtime: '2023-07-15', status: '1' },
+        { id: 1002, name: '李娜', sex: '0', age: 28, phone: '13900139000', regtime: '2023-07-10', status: '1' },
+        { id: 1003, name: '王刚', sex: '1', age: 45, phone: '13700137000', regtime: '2023-06-25', status: '0' },
+        { id: 1004, name: '赵敏', sex: '0', age: 31, phone: '13600136000', regtime: '2023-06-20', status: '1' },
+        { id: 1005, name: '陈浩', sex: '1', age: 29, phone: '13500135000', regtime: '2023-06-15', status: '1' },
+        { id: 1006, name: '杨雪', sex: '0', age: 26, phone: '13400134000', regtime: '2023-06-05', status: '1' },
+        { id: 1007, name: '刘强', sex: '1', age: 38, phone: '13300133000', regtime: '2023-05-28', status: '0' },
+        { id: 1008, name: '黄娟', sex: '0', age: 33, phone: '13200132000', regtime: '2023-05-20', status: '1' }
+      ],
+      searchName: '',
+      searchPhone: '',
+      searchStatus: '',
+      currentPage: 1,
+      pageSize: 8,
+      maxVisiblePages: 5,
+      newMember: {
+        name: '',
+        sex: '1',
+        age: '',
+        phone: '',
+        status: '1'
+      },
+      editedMember: {},
+      addMemberModal: null,
+      editMemberModal: null
+    },
+    computed: {
+      totalPages() {
+        return Math.ceil(this.filteredMembers.length / this.pageSize);
+      },
+      visiblePages() {
+        const pages = [];
+        let startPage = Math.max(1, this.currentPage - Math.floor(this.maxVisiblePages / 2));
+        let endPage = startPage + this.maxVisiblePages - 1;
+
+        if (endPage > this.totalPages) {
+          endPage = this.totalPages;
+          startPage = Math.max(1, endPage - this.maxVisiblePages + 1);
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+          pages.push(i);
+        }
+
+        return pages;
+      },
+      filteredMembers() {
+        return this.memberList.filter(member => {
+          const nameMatch = member.name.includes(this.searchName);
+          const phoneMatch = member.phone.includes(this.searchPhone);
+          const statusMatch = this.searchStatus === '' || member.status === this.searchStatus;
+          return nameMatch && phoneMatch && statusMatch;
+        }).slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize);
+      },
+      totalMembers() {
+        return this.memberList.length;
+      },
+      normalMembers() {
+        return this.memberList.filter(member => member.status === '1').length;
+      },
+      frozenMembers() {
+        return this.memberList.filter(member => member.status === '0').length;
+      },
+      newMembersThisMonth() {
+        const currentMonth = new Date().getMonth() + 1;
+        return this.memberList.filter(member => {
+          const regMonth = new Date(member.regtime).getMonth() + 1;
+          return regMonth === currentMonth;
+        }).length;
+      }
+    },
+    methods: {
+      searchMembers() {
+        this.currentPage = 1;
+      },
+      resetSearch() {
+        this.searchName = '';
+        this.searchPhone = '';
+        this.searchStatus = '';
+        this.currentPage = 1;
+      },
+      openAddMemberModal() {
+        this.newMember = {
+          name: '',
+          sex: '1',
+          age: '',
+          phone: '',
+          status: '1'
+        };
+        this.addMemberModal = new bootstrap.Modal(document.getElementById('addMemberModal'));
+        this.addMemberModal.show();
+      },
+      saveNewMember() {
+        const newId = Math.max(...this.memberList.map(member => member.id)) + 1;
+        const newMember = {
+          id: newId,
+          ...this.newMember,
+          regtime: new Date().toISOString().split('T')[0]
+        };
+        this.memberList.push(newMember);
+        this.addMemberModal.hide();
+      },
+      openEditMemberModal(member) {
+        this.editedMember = { ...member };
+        this.editMemberModal = new bootstrap.Modal(document.getElementById('editMemberModal'));
+        this.editMemberModal.show();
+      },
+      saveEditedMember() {
+        const index = this.memberList.findIndex(member => member.id === this.editedMember.id);
+        if (index !== -1) {
+          this.memberList[index] = { ...this.editedMember };
+        }
+        this.editMemberModal.hide();
+      },
+      deleteMember(id) {
+        if (confirm('确定要删除该会员吗？此操作不可恢复。')) {
+          this.memberList = this.memberList.filter(member => member.id !== id);
+          alert('会员删除成功！');
+        }
+      },
+      prevPage() {
+        if (this.currentPage > 1) {
+          this.currentPage--;
+        }
+      },
+      nextPage() {
+        if (this.currentPage < this.totalPages) {
+          this.currentPage++;
+        }
+      },
+      goToPage(page) {
+        this.currentPage = page;
+      }
+    },
+    mounted() {
+      // 初始加载会员数据
+      this.searchMembers();
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
