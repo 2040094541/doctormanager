@@ -5,95 +5,7 @@
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||root|localhost|ALTER|G
-|root||root|localhost|ALTER ROUTINE|G
-|root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
-|root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
-|root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
-|root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
-|root||root|localhost|AUDIT_ABORT_EXEMPT|G
-|root||root|localhost|AUDIT_ADMIN|G
-|root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
-|root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
-|root||mysql.session|localhost|BACKUP_ADMIN|G
-|root||root|localhost|BACKUP_ADMIN|G
-|root||root|localhost|BINLOG_ADMIN|G
-|root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
-|root||mysql.session|localhost|CLONE_ADMIN|G
-|root||root|localhost|CLONE_ADMIN|G
-|root||mysql.session|localhost|CONNECTION_ADMIN|G
-|root||root|localhost|CONNECTION_ADMIN|G
-|root||root|localhost|CREATE|G
-|root||root|localhost|CREATE ROLE|G
-|root||root|localhost|CREATE ROUTINE|G
-|root||root|localhost|CREATE TABLESPACE|G
-|root||root|localhost|CREATE TEMPORARY TABLES|G
-|root||root|localhost|CREATE USER|G
-|root||root|localhost|CREATE VIEW|G
-|root||root|localhost|DELETE|G
-|root||root|localhost|DROP|G
-|root||root|localhost|DROP ROLE|G
-|root||root|localhost|ENCRYPTION_KEY_ADMIN|G
-|root||root|localhost|EVENT|G
-|root||root|localhost|EXECUTE|G
-|root||root|localhost|FILE|G
-|root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
-|root||mysql.session|localhost|FIREWALL_EXEMPT|G
-|root||mysql.sys|localhost|FIREWALL_EXEMPT|G
-|root||root|localhost|FIREWALL_EXEMPT|G
-|root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
-|root||root|localhost|FLUSH_STATUS|G
-|root||root|localhost|FLUSH_TABLES|G
-|root||root|localhost|FLUSH_USER_RESOURCES|G
-|root||root|localhost|GROUP_REPLICATION_ADMIN|G
-|root||root|localhost|GROUP_REPLICATION_STREAM|G
-|root||root|localhost|INDEX|G
-|root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
-|root||root|localhost|INNODB_REDO_LOG_ENABLE|G
-|root||root|localhost|INSERT|G
-|root||root|localhost|LOCK TABLES|G
-|root||root|localhost|PASSWORDLESS_USER_ADMIN|G
-|root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
-|root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
-|root||root|localhost|PROCESS|G
-|root||root|localhost|REFERENCES|G
-|root||root|localhost|RELOAD|G
-|root||root|localhost|REPLICATION CLIENT|G
-|root||root|localhost|REPLICATION SLAVE|G
-|root||root|localhost|REPLICATION_APPLIER|G
-|root||root|localhost|REPLICATION_SLAVE_ADMIN|G
-|root||root|localhost|RESOURCE_GROUP_ADMIN|G
-|root||root|localhost|RESOURCE_GROUP_USER|G
-|root||root|localhost|ROLE_ADMIN|G
-|root||mysql.infoschema|localhost|SELECT|G
-|root||root|localhost|SELECT|G
-|root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
-|root||root|localhost|SERVICE_CONNECTION_ADMIN|G
-|root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root|localhost|SET_USER_ID|G
-|root||root|localhost|SHOW DATABASES|G
-|root||root|localhost|SHOW VIEW|G
-|root||root|localhost|SHOW_ROUTINE|G
-|root||mysql.session|localhost|SHUTDOWN|G
-|root||root|localhost|SHUTDOWN|G
-|root||mysql.session|localhost|SUPER|G
-|root||root|localhost|SUPER|G
-|root||mysql.infoschema|localhost|SYSTEM_USER|G
-|root||mysql.session|localhost|SYSTEM_USER|G
-|root||mysql.sys|localhost|SYSTEM_USER|G
-|root||root|localhost|SYSTEM_USER|G
-|root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
-|root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
-|root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
-|root||root|localhost|TELEMETRY_LOG_ADMIN|G
-|root||root|localhost|TRIGGER|G
-|root||root|localhost|UPDATE|G
-|root||root|localhost|XA_RECOVER_ADMIN|G
-|root||root|localhost|grant option|G
-performance_schema|schema||mysql.session|localhost|SELECT|G
-sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>8.0.34</ServerVersion>
+      <ServerVersion>5.7.12</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -641,1136 +553,1171 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="170" parent="1" name="utf32_vietnamese_ci">
       <Charset>utf32</Charset>
     </collation>
-    <collation id="171" parent="1" name="utf8mb3_bin">
-      <Charset>utf8mb3</Charset>
+    <collation id="171" parent="1" name="utf8_bin">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="172" parent="1" name="utf8mb3_croatian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="172" parent="1" name="utf8_croatian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="173" parent="1" name="utf8mb3_czech_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="173" parent="1" name="utf8_czech_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="174" parent="1" name="utf8mb3_danish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="174" parent="1" name="utf8_danish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="175" parent="1" name="utf8mb3_esperanto_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="175" parent="1" name="utf8_esperanto_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="176" parent="1" name="utf8mb3_estonian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="176" parent="1" name="utf8_estonian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="177" parent="1" name="utf8mb3_general_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="177" parent="1" name="utf8_general_ci">
+      <Charset>utf8</Charset>
       <DefaultForCharset>1</DefaultForCharset>
     </collation>
-    <collation id="178" parent="1" name="utf8mb3_general_mysql500_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="178" parent="1" name="utf8_general_mysql500_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="179" parent="1" name="utf8mb3_german2_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="179" parent="1" name="utf8_german2_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="180" parent="1" name="utf8mb3_hungarian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="180" parent="1" name="utf8_hungarian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="181" parent="1" name="utf8mb3_icelandic_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="181" parent="1" name="utf8_icelandic_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="182" parent="1" name="utf8mb3_latvian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="182" parent="1" name="utf8_latvian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="183" parent="1" name="utf8mb3_lithuanian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="183" parent="1" name="utf8_lithuanian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="184" parent="1" name="utf8mb3_persian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="184" parent="1" name="utf8_persian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="185" parent="1" name="utf8mb3_polish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="185" parent="1" name="utf8_polish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="186" parent="1" name="utf8mb3_roman_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="186" parent="1" name="utf8_roman_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="187" parent="1" name="utf8mb3_romanian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="187" parent="1" name="utf8_romanian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="188" parent="1" name="utf8mb3_sinhala_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="188" parent="1" name="utf8_sinhala_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="189" parent="1" name="utf8mb3_slovak_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="189" parent="1" name="utf8_slovak_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="190" parent="1" name="utf8mb3_slovenian_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="190" parent="1" name="utf8_slovenian_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="191" parent="1" name="utf8mb3_spanish2_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="191" parent="1" name="utf8_spanish2_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="192" parent="1" name="utf8mb3_spanish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="192" parent="1" name="utf8_spanish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="193" parent="1" name="utf8mb3_swedish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="193" parent="1" name="utf8_swedish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="194" parent="1" name="utf8mb3_tolower_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="194" parent="1" name="utf8_turkish_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="195" parent="1" name="utf8mb3_turkish_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="195" parent="1" name="utf8_unicode_520_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="196" parent="1" name="utf8mb3_unicode_520_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="196" parent="1" name="utf8_unicode_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="197" parent="1" name="utf8mb3_unicode_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="197" parent="1" name="utf8_vietnamese_ci">
+      <Charset>utf8</Charset>
     </collation>
-    <collation id="198" parent="1" name="utf8mb3_vietnamese_ci">
-      <Charset>utf8mb3</Charset>
+    <collation id="198" parent="1" name="utf8mb4_bin">
+      <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="199" parent="1" name="utf8mb4_0900_ai_ci">
+    <collation id="199" parent="1" name="utf8mb4_croatian_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="200" parent="1" name="utf8mb4_czech_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="201" parent="1" name="utf8mb4_danish_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="202" parent="1" name="utf8mb4_esperanto_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="203" parent="1" name="utf8mb4_estonian_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="204" parent="1" name="utf8mb4_general_ci">
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>1</DefaultForCharset>
     </collation>
-    <collation id="200" parent="1" name="utf8mb4_0900_as_ci">
+    <collation id="205" parent="1" name="utf8mb4_german2_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="201" parent="1" name="utf8mb4_0900_as_cs">
+    <collation id="206" parent="1" name="utf8mb4_hungarian_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="202" parent="1" name="utf8mb4_0900_bin">
+    <collation id="207" parent="1" name="utf8mb4_icelandic_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="203" parent="1" name="utf8mb4_bg_0900_ai_ci">
+    <collation id="208" parent="1" name="utf8mb4_latvian_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="204" parent="1" name="utf8mb4_bg_0900_as_cs">
+    <collation id="209" parent="1" name="utf8mb4_lithuanian_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="205" parent="1" name="utf8mb4_bin">
+    <collation id="210" parent="1" name="utf8mb4_persian_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="206" parent="1" name="utf8mb4_bs_0900_ai_ci">
+    <collation id="211" parent="1" name="utf8mb4_polish_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="207" parent="1" name="utf8mb4_bs_0900_as_cs">
+    <collation id="212" parent="1" name="utf8mb4_roman_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="208" parent="1" name="utf8mb4_croatian_ci">
+    <collation id="213" parent="1" name="utf8mb4_romanian_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="209" parent="1" name="utf8mb4_cs_0900_ai_ci">
+    <collation id="214" parent="1" name="utf8mb4_sinhala_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="210" parent="1" name="utf8mb4_cs_0900_as_cs">
+    <collation id="215" parent="1" name="utf8mb4_slovak_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="211" parent="1" name="utf8mb4_czech_ci">
+    <collation id="216" parent="1" name="utf8mb4_slovenian_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="212" parent="1" name="utf8mb4_da_0900_ai_ci">
+    <collation id="217" parent="1" name="utf8mb4_spanish2_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="213" parent="1" name="utf8mb4_da_0900_as_cs">
+    <collation id="218" parent="1" name="utf8mb4_spanish_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="214" parent="1" name="utf8mb4_danish_ci">
+    <collation id="219" parent="1" name="utf8mb4_swedish_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="215" parent="1" name="utf8mb4_de_pb_0900_ai_ci">
+    <collation id="220" parent="1" name="utf8mb4_turkish_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="216" parent="1" name="utf8mb4_de_pb_0900_as_cs">
+    <collation id="221" parent="1" name="utf8mb4_unicode_520_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="217" parent="1" name="utf8mb4_eo_0900_ai_ci">
+    <collation id="222" parent="1" name="utf8mb4_unicode_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="218" parent="1" name="utf8mb4_eo_0900_as_cs">
+    <collation id="223" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <collation id="219" parent="1" name="utf8mb4_es_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="220" parent="1" name="utf8mb4_es_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="221" parent="1" name="utf8mb4_es_trad_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="222" parent="1" name="utf8mb4_es_trad_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="223" parent="1" name="utf8mb4_esperanto_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="224" parent="1" name="utf8mb4_estonian_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="225" parent="1" name="utf8mb4_et_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="226" parent="1" name="utf8mb4_et_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="227" parent="1" name="utf8mb4_general_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="228" parent="1" name="utf8mb4_german2_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="229" parent="1" name="utf8mb4_gl_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="230" parent="1" name="utf8mb4_gl_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="231" parent="1" name="utf8mb4_hr_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="232" parent="1" name="utf8mb4_hr_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="233" parent="1" name="utf8mb4_hu_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="234" parent="1" name="utf8mb4_hu_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="235" parent="1" name="utf8mb4_hungarian_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="236" parent="1" name="utf8mb4_icelandic_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="237" parent="1" name="utf8mb4_is_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="238" parent="1" name="utf8mb4_is_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="239" parent="1" name="utf8mb4_ja_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="240" parent="1" name="utf8mb4_ja_0900_as_cs_ks">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="241" parent="1" name="utf8mb4_la_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="242" parent="1" name="utf8mb4_la_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="243" parent="1" name="utf8mb4_latvian_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="244" parent="1" name="utf8mb4_lithuanian_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="245" parent="1" name="utf8mb4_lt_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="246" parent="1" name="utf8mb4_lt_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="247" parent="1" name="utf8mb4_lv_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="248" parent="1" name="utf8mb4_lv_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="249" parent="1" name="utf8mb4_mn_cyrl_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="250" parent="1" name="utf8mb4_mn_cyrl_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="251" parent="1" name="utf8mb4_nb_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="252" parent="1" name="utf8mb4_nb_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="253" parent="1" name="utf8mb4_nn_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="254" parent="1" name="utf8mb4_nn_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="255" parent="1" name="utf8mb4_persian_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="256" parent="1" name="utf8mb4_pl_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="257" parent="1" name="utf8mb4_pl_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="258" parent="1" name="utf8mb4_polish_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="259" parent="1" name="utf8mb4_ro_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="260" parent="1" name="utf8mb4_ro_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="261" parent="1" name="utf8mb4_roman_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="262" parent="1" name="utf8mb4_romanian_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="263" parent="1" name="utf8mb4_ru_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="264" parent="1" name="utf8mb4_ru_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="265" parent="1" name="utf8mb4_sinhala_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="266" parent="1" name="utf8mb4_sk_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="267" parent="1" name="utf8mb4_sk_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="268" parent="1" name="utf8mb4_sl_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="269" parent="1" name="utf8mb4_sl_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="270" parent="1" name="utf8mb4_slovak_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="271" parent="1" name="utf8mb4_slovenian_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="272" parent="1" name="utf8mb4_spanish2_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="273" parent="1" name="utf8mb4_spanish_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="274" parent="1" name="utf8mb4_sr_latn_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="275" parent="1" name="utf8mb4_sr_latn_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="276" parent="1" name="utf8mb4_sv_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="277" parent="1" name="utf8mb4_sv_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="278" parent="1" name="utf8mb4_swedish_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="279" parent="1" name="utf8mb4_tr_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="280" parent="1" name="utf8mb4_tr_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="281" parent="1" name="utf8mb4_turkish_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="282" parent="1" name="utf8mb4_unicode_520_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="283" parent="1" name="utf8mb4_unicode_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="284" parent="1" name="utf8mb4_vi_0900_ai_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="285" parent="1" name="utf8mb4_vi_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="286" parent="1" name="utf8mb4_vietnamese_ci">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <collation id="287" parent="1" name="utf8mb4_zh_0900_as_cs">
-      <Charset>utf8mb4</Charset>
-    </collation>
-    <schema id="288" parent="1" name="information_schema">
-      <CollationName>utf8mb3_general_ci</CollationName>
+    <schema id="224" parent="1" name="atm">
+      <Current>1</Current>
+      <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="mysql">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    <schema id="225" parent="1" name="bankdb">
+      <CollationName>latin1_swedish_ci</CollationName>
     </schema>
-    <schema id="290" parent="1" name="performance_schema">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    <schema id="226" parent="1" name="banks">
+      <CollationName>latin1_swedish_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="sakila">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    <schema id="227" parent="1" name="empolys">
+      <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="springboot_pe">
-      <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
-      <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-06-09.07:12:12</LastIntrospectionLocalTimestamp>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    <schema id="228" parent="1" name="information_schema">
+      <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="293" parent="1" name="sys">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    <schema id="229" parent="1" name="mysql">
+      <CollationName>latin1_swedish_ci</CollationName>
     </schema>
-    <schema id="294" parent="1" name="world">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    <schema id="230" parent="1" name="performance_schema">
+      <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <user id="295" parent="1" name="mysql.infoschema">
-      <CanLogin>0</CanLogin>
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="296" parent="1" name="mysql.session">
-      <CanLogin>0</CanLogin>
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="297" parent="1" name="mysql.sys">
-      <CanLogin>0</CanLogin>
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="298" parent="1" name="root">
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <table id="299" parent="292" name="t_checkgroup">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="300" parent="292" name="t_checkgroup_checkitem">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="301" parent="292" name="t_checkitem">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="302" parent="292" name="t_member">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="303" parent="292" name="t_menu">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="304" parent="292" name="t_order">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="305" parent="292" name="t_ordersetting">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="306" parent="292" name="t_permission">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="307" parent="292" name="t_role">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="308" parent="292" name="t_role_menu">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="309" parent="292" name="t_role_permission">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="310" parent="292" name="t_setmeal">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="311" parent="292" name="t_setmeal_checkgroup">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="312" parent="292" name="t_user">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <table id="313" parent="292" name="t_user_role">
-      <DetailsLevel>3</DetailsLevel>
-      <Engine>InnoDB</Engine>
-      <Options>row_format
-COMPACT</Options>
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </table>
-    <column id="314" parent="299" name="id">
-      <AutoIncrement>21</AutoIncrement>
+    <schema id="231" parent="1" name="school">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="232" parent="1" name="school_management">
+      <CollationName>latin1_swedish_ci</CollationName>
+    </schema>
+    <schema id="233" parent="1" name="springboot_pe">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="234" parent="1" name="sx">
+      <CollationName>latin1_swedish_ci</CollationName>
+    </schema>
+    <schema id="235" parent="1" name="sys">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <routine id="236" parent="224" name="bank_updates">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>1983</SourceTextLength>
+    </routine>
+    <routine id="237" parent="224" name="cqtest">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>1110</SourceTextLength>
+    </routine>
+    <routine id="238" parent="224" name="f">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>397</SourceTextLength>
+    </routine>
+    <table id="239" parent="224" name="card_info"/>
+    <table id="240" parent="224" name="services"/>
+    <table id="241" parent="224" name="trade_info"/>
+    <table id="242" parent="224" name="user_info"/>
+    <view id="243" parent="224" name="view_cardinfo">
+      <Definer>root@localhost</Definer>
+      <SourceTextLength>327</SourceTextLength>
+    </view>
+    <view id="244" parent="224" name="view_tradeinfo">
+      <Definer>root@localhost</Definer>
+      <SourceTextLength>382</SourceTextLength>
+    </view>
+    <view id="245" parent="224" name="view_userinfo">
+      <Definer>root@localhost</Definer>
+      <SourceTextLength>183</SourceTextLength>
+    </view>
+    <routine id="246" parent="233" name="fn">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>function</RoutineKind>
+      <SourceTextLength>10</SourceTextLength>
+    </routine>
+    <routine id="247" parent="233" name="fn2">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>function</RoutineKind>
+      <SourceTextLength>98</SourceTextLength>
+    </routine>
+    <routine id="248" parent="233" name="fn3">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>function</RoutineKind>
+      <SourceTextLength>10</SourceTextLength>
+    </routine>
+    <routine id="249" parent="233" name="fn4">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>function</RoutineKind>
+      <SourceTextLength>103</SourceTextLength>
+    </routine>
+    <routine id="250" parent="233" name="fn5">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>function</RoutineKind>
+      <SourceTextLength>101</SourceTextLength>
+    </routine>
+    <routine id="251" parent="233" name="my_pro">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>22</SourceTextLength>
+    </routine>
+    <routine id="252" parent="233" name="pro_count">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>44</SourceTextLength>
+    </routine>
+    <routine id="253" parent="233" name="pro_del">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>40</SourceTextLength>
+    </routine>
+    <table id="254" parent="233" name="t_checkgroup"/>
+    <table id="255" parent="233" name="t_checkgroup_checkitem"/>
+    <table id="256" parent="233" name="t_checkitem"/>
+    <table id="257" parent="233" name="t_member"/>
+    <table id="258" parent="233" name="t_menu"/>
+    <table id="259" parent="233" name="t_order"/>
+    <table id="260" parent="233" name="t_ordersetting"/>
+    <table id="261" parent="233" name="t_permission"/>
+    <table id="262" parent="233" name="t_role"/>
+    <table id="263" parent="233" name="t_role_menu"/>
+    <table id="264" parent="233" name="t_role_permission"/>
+    <table id="265" parent="233" name="t_setmeal"/>
+    <table id="266" parent="233" name="t_setmeal_checkgroup"/>
+    <table id="267" parent="233" name="t_user"/>
+    <table id="268" parent="233" name="t_user_role"/>
+    <argument id="269" parent="236" name="card_number1">
+      <Position>1</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </argument>
+    <argument id="270" parent="236" name="money_num">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="271" parent="236" name="pass_word">
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="272" parent="236" name="card_number2">
+      <Position>4</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </argument>
+    <argument id="273" parent="237" name="moneys">
+      <Position>1</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </argument>
+    <argument id="274" parent="237" name="card_nums">
+      <Position>2</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </argument>
+    <argument id="275" parent="237" name="lx">
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </argument>
+    <column id="276" parent="239" name="card_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="315" parent="299" name="code">
+    <column id="277" parent="239" name="user_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="278" parent="239" name="card_num">
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="279" parent="239" name="PASSWORD">
+      <DefaultExpression>888888</DefaultExpression>
+      <Position>4</Position>
+      <StoredType>int(6)|0s</StoredType>
+    </column>
+    <column id="280" parent="239" name="currency">
+      <DefaultExpression>&apos;RMB&apos;</DefaultExpression>
+      <Position>5</Position>
+      <StoredType>varchar(10)|0s</StoredType>
+    </column>
+    <column id="281" parent="239" name="deposit_type">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="282" parent="239" name="opening_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>7</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="283" parent="239" name="opening_money">
+      <DefaultExpression>1.00</DefaultExpression>
+      <Position>8</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </column>
+    <column id="284" parent="239" name="balance">
+      <DefaultExpression>1.00</DefaultExpression>
+      <Position>9</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </column>
+    <column id="285" parent="239" name="is_loss">
+      <Comment>1:是,2:否</Comment>
+      <Position>10</Position>
+      <StoredType>enum(&apos;是&apos;, &apos;否&apos;)|0e</StoredType>
+    </column>
+    <foreign-key id="286" parent="239" name="card_info_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>user_info</RefTableName>
+    </foreign-key>
+    <foreign-key id="287" parent="239" name="card_info_ibfk_2">
+      <ColNames>deposit_type</ColNames>
+      <RefColNames>service_id</RefColNames>
+      <RefTableName>services</RefTableName>
+    </foreign-key>
+    <index id="288" parent="239" name="user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="289" parent="239" name="deposit_type">
+      <ColNames>deposit_type</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="290" parent="239" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexColNames>card_id</UnderlyingIndexColNames>
+    </key>
+    <column id="291" parent="240" name="service_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="292" parent="240" name="service_name">
+      <Position>2</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="293" parent="240" name="service_description">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <key id="294" parent="240" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexColNames>service_id</UnderlyingIndexColNames>
+    </key>
+    <column id="295" parent="241" name="trade_id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="296" parent="241" name="card_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="297" parent="241" name="service_id">
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="298" parent="241" name="card_num">
+      <Position>4</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="299" parent="241" name="trade_date">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>5</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="300" parent="241" name="trade_num">
+      <Position>6</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </column>
+    <column id="301" parent="241" name="trade_type">
+      <Comment>1:存入,2:支取</Comment>
+      <Position>7</Position>
+      <StoredType>enum(&apos;存入&apos;, &apos;支取&apos;)|0e</StoredType>
+    </column>
+    <column id="302" parent="241" name="ps">
+      <Comment>备注说明</Comment>
+      <Position>8</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <foreign-key id="303" parent="241" name="trade_info_ibfk_1">
+      <ColNames>card_id</ColNames>
+      <RefColNames>card_id</RefColNames>
+      <RefTableName>card_info</RefTableName>
+    </foreign-key>
+    <foreign-key id="304" parent="241" name="trade_info_ibfk_2">
+      <ColNames>service_id</ColNames>
+      <RefColNames>service_id</RefColNames>
+      <RefTableName>services</RefTableName>
+    </foreign-key>
+    <index id="305" parent="241" name="card_id">
+      <ColNames>card_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="306" parent="241" name="service_id">
+      <ColNames>service_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="307" parent="241" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexColNames>trade_id</UnderlyingIndexColNames>
+    </key>
+    <column id="308" parent="242" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="309" parent="242" name="NAME">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="310" parent="242" name="phone">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(11)|0s</StoredType>
+    </column>
+    <column id="311" parent="242" name="address">
+      <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <key id="312" parent="242" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexColNames>user_id</UnderlyingIndexColNames>
+    </key>
+    <column id="313" parent="243" name="card_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="314" parent="243" name="user_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="315" parent="243" name="card_num">
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="316" parent="243" name="opening_date">
+      <Position>4</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="317" parent="243" name="balance">
+      <Position>5</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </column>
+    <column id="318" parent="243" name="is_loss">
+      <Comment>1:是,2:否</Comment>
+      <Position>6</Position>
+      <StoredType>enum(&apos;是&apos;, &apos;否&apos;)|0e</StoredType>
+    </column>
+    <column id="319" parent="244" name="trade_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="320" parent="244" name="card_id">
+      <Position>2</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="321" parent="244" name="service_id">
+      <Position>3</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="322" parent="244" name="card_num">
+      <Position>4</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="323" parent="244" name="trade_date">
+      <Position>5</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="324" parent="244" name="trade_num">
+      <Position>6</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </column>
+    <column id="325" parent="244" name="trade_type">
+      <Comment>1:存入,2:支取</Comment>
+      <Position>7</Position>
+      <StoredType>enum(&apos;存入&apos;, &apos;支取&apos;)|0e</StoredType>
+    </column>
+    <column id="326" parent="244" name="ps">
+      <Comment>备注说明</Comment>
+      <Position>8</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="327" parent="245" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="328" parent="245" name="NAME">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="329" parent="245" name="phone">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(11)|0s</StoredType>
+    </column>
+    <column id="330" parent="245" name="address">
+      <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <argument id="331" parent="246">
+      <ArgumentDirection>R</ArgumentDirection>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="332" parent="247">
+      <ArgumentDirection>R</ArgumentDirection>
+      <StoredType>varchar(20)|0s</StoredType>
+    </argument>
+    <argument id="333" parent="247" name="id">
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="334" parent="248">
+      <ArgumentDirection>R</ArgumentDirection>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="335" parent="249">
+      <ArgumentDirection>R</ArgumentDirection>
+      <StoredType>varchar(20)|0s</StoredType>
+    </argument>
+    <argument id="336" parent="249" name="id">
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="337" parent="250">
+      <ArgumentDirection>R</ArgumentDirection>
+      <StoredType>varchar(20)|0s</StoredType>
+    </argument>
+    <argument id="338" parent="250" name="id">
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="339" parent="251" name="n">
+      <ArgumentDirection>M</ArgumentDirection>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="340" parent="252" name="n">
+      <ArgumentDirection>O</ArgumentDirection>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <argument id="341" parent="253" name="i">
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </argument>
+    <column id="342" parent="254" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int(11)|0s</StoredType>
+    </column>
+    <column id="343" parent="254" name="code">
       <Position>2</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="316" parent="299" name="name">
+    <column id="344" parent="254" name="name">
       <Position>3</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="317" parent="299" name="helpCode">
+    <column id="345" parent="254" name="helpCode">
       <Position>4</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="318" parent="299" name="sex">
+    <column id="346" parent="254" name="sex">
       <Position>5</Position>
       <StoredType>char(1)|0s</StoredType>
     </column>
-    <column id="319" parent="299" name="remark">
+    <column id="347" parent="254" name="remark">
       <Position>6</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="320" parent="299" name="attention">
+    <column id="348" parent="254" name="attention">
       <Position>7</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <index id="321" parent="299" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="322" parent="299" name="PRIMARY">
+    <key id="349" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="323" parent="300" name="checkgroup_id">
+    <column id="350" parent="255" name="checkgroup_id">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="324" parent="300" name="checkitem_id">
+    <column id="351" parent="255" name="checkitem_id">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="325" parent="300" name="group_id">
+    <foreign-key id="352" parent="255" name="group_id">
       <ColNames>checkgroup_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_checkgroup</RefTableName>
     </foreign-key>
-    <foreign-key id="326" parent="300" name="item_id">
+    <foreign-key id="353" parent="255" name="item_id">
       <ColNames>checkitem_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_checkitem</RefTableName>
     </foreign-key>
-    <index id="327" parent="300" name="PRIMARY">
-      <ColNames>checkgroup_id
-checkitem_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="328" parent="300" name="item_id">
+    <index id="354" parent="255" name="item_id">
       <ColNames>checkitem_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="329" parent="300" name="PRIMARY">
+    <key id="355" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>checkgroup_id
+checkitem_id</UnderlyingIndexColNames>
     </key>
-    <column id="330" parent="301" name="id">
-      <AutoIncrement>100</AutoIncrement>
+    <column id="356" parent="256" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="331" parent="301" name="code">
+    <column id="357" parent="256" name="code">
       <Position>2</Position>
       <StoredType>varchar(16)|0s</StoredType>
     </column>
-    <column id="332" parent="301" name="name">
+    <column id="358" parent="256" name="name">
       <Position>3</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="333" parent="301" name="sex">
+    <column id="359" parent="256" name="sex">
       <Position>4</Position>
       <StoredType>char(1)|0s</StoredType>
     </column>
-    <column id="334" parent="301" name="age">
+    <column id="360" parent="256" name="age">
       <Position>5</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="335" parent="301" name="price">
+    <column id="361" parent="256" name="price">
       <Position>6</Position>
       <StoredType>float|0s</StoredType>
     </column>
-    <column id="336" parent="301" name="type">
+    <column id="362" parent="256" name="type">
       <Comment>查检项类型,分为检查和检验两种</Comment>
       <Position>7</Position>
       <StoredType>char(1)|0s</StoredType>
     </column>
-    <column id="337" parent="301" name="attention">
+    <column id="363" parent="256" name="attention">
       <Position>8</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="338" parent="301" name="remark">
+    <column id="364" parent="256" name="remark">
       <Position>9</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="339" parent="301" name="deleted">
-      <Comment>逻辑删除标志</Comment>
+    <column id="365" parent="256" name="deleted">
+      <Comment>1代表可用，0代表删除</Comment>
       <DefaultExpression>1</DefaultExpression>
       <Position>10</Position>
-      <StoredType>tinyint(1)|0s</StoredType>
+      <StoredType>int(1)|0s</StoredType>
     </column>
-    <index id="340" parent="301" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="341" parent="301" name="PRIMARY">
+    <key id="366" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="342" parent="302" name="id">
-      <AutoIncrement>98</AutoIncrement>
+    <column id="367" parent="257" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="343" parent="302" name="fileNumber">
+    <column id="368" parent="257" name="fileNumber">
       <Position>2</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="344" parent="302" name="name">
+    <column id="369" parent="257" name="name">
       <Position>3</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="345" parent="302" name="sex">
+    <column id="370" parent="257" name="sex">
       <Position>4</Position>
       <StoredType>varchar(8)|0s</StoredType>
     </column>
-    <column id="346" parent="302" name="idCard">
+    <column id="371" parent="257" name="idCard">
       <Position>5</Position>
       <StoredType>varchar(18)|0s</StoredType>
     </column>
-    <column id="347" parent="302" name="phoneNumber">
+    <column id="372" parent="257" name="phoneNumber">
       <Position>6</Position>
       <StoredType>varchar(11)|0s</StoredType>
     </column>
-    <column id="348" parent="302" name="regTime">
+    <column id="373" parent="257" name="regTime">
       <Position>7</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="349" parent="302" name="password">
+    <column id="374" parent="257" name="password">
       <Position>8</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="350" parent="302" name="email">
+    <column id="375" parent="257" name="email">
       <Position>9</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="351" parent="302" name="birthday">
+    <column id="376" parent="257" name="birthday">
       <Position>10</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="352" parent="302" name="remark">
+    <column id="377" parent="257" name="remark">
       <Position>11</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <index id="353" parent="302" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="354" parent="302" name="PRIMARY">
+    <key id="378" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="355" parent="303" name="id">
-      <AutoIncrement>22</AutoIncrement>
+    <column id="379" parent="258" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="356" parent="303" name="name">
+    <column id="380" parent="258" name="name">
       <Position>2</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="357" parent="303" name="linkUrl">
+    <column id="381" parent="258" name="linkUrl">
       <Position>3</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="358" parent="303" name="path">
+    <column id="382" parent="258" name="path">
       <Position>4</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="359" parent="303" name="priority">
+    <column id="383" parent="258" name="priority">
       <Position>5</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="360" parent="303" name="icon">
+    <column id="384" parent="258" name="icon">
       <Position>6</Position>
       <StoredType>varchar(64)|0s</StoredType>
     </column>
-    <column id="361" parent="303" name="description">
+    <column id="385" parent="258" name="description">
       <Position>7</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="362" parent="303" name="parentMenuId">
+    <column id="386" parent="258" name="parentMenuId">
       <Position>8</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="363" parent="303" name="level">
+    <column id="387" parent="258" name="level">
       <Position>9</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="364" parent="303" name="FK_Reference_13">
+    <foreign-key id="388" parent="258" name="FK_Reference_13">
       <ColNames>parentMenuId</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_menu</RefTableName>
     </foreign-key>
-    <index id="365" parent="303" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="366" parent="303" name="FK_Reference_13">
+    <index id="389" parent="258" name="FK_Reference_13">
       <ColNames>parentMenuId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="367" parent="303" name="PRIMARY">
+    <key id="390" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="368" parent="304" name="id">
-      <AutoIncrement>21</AutoIncrement>
+    <column id="391" parent="259" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="369" parent="304" name="member_id">
+    <column id="392" parent="259" name="member_id">
       <Comment>员会id</Comment>
       <Position>2</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="370" parent="304" name="orderDate">
+    <column id="393" parent="259" name="orderDate">
       <Comment>约预日期</Comment>
       <Position>3</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="371" parent="304" name="orderType">
+    <column id="394" parent="259" name="orderType">
       <Comment>约预类型 电话预约/微信预约</Comment>
       <Position>4</Position>
       <StoredType>varchar(8)|0s</StoredType>
     </column>
-    <column id="372" parent="304" name="orderStatus">
+    <column id="395" parent="259" name="orderStatus">
       <Comment>预约状态（是否到诊）</Comment>
       <Position>5</Position>
       <StoredType>varchar(8)|0s</StoredType>
     </column>
-    <column id="373" parent="304" name="setmeal_id">
+    <column id="396" parent="259" name="setmeal_id">
       <Comment>餐套id</Comment>
       <Position>6</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="374" parent="304" name="key_member_id">
+    <foreign-key id="397" parent="259" name="key_member_id">
       <ColNames>member_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_member</RefTableName>
     </foreign-key>
-    <foreign-key id="375" parent="304" name="key_setmeal_id">
+    <foreign-key id="398" parent="259" name="key_setmeal_id">
       <ColNames>setmeal_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_setmeal</RefTableName>
     </foreign-key>
-    <index id="376" parent="304" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="377" parent="304" name="key_member_id">
+    <index id="399" parent="259" name="key_member_id">
       <ColNames>member_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="378" parent="304" name="key_setmeal_id">
+    <index id="400" parent="259" name="key_setmeal_id">
       <ColNames>setmeal_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="379" parent="304" name="PRIMARY">
+    <key id="401" parent="259" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="380" parent="305" name="id">
-      <AutoIncrement>191</AutoIncrement>
+    <column id="402" parent="260" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="381" parent="305" name="orderDate">
+    <column id="403" parent="260" name="orderDate">
       <Comment>约预日期</Comment>
       <Position>2</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="382" parent="305" name="number">
+    <column id="404" parent="260" name="number">
       <Comment>可预约人数</Comment>
       <Position>3</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="383" parent="305" name="reservations">
+    <column id="405" parent="260" name="reservations">
       <Comment>已预约人数</Comment>
       <DefaultExpression>0</DefaultExpression>
       <Position>4</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <index id="384" parent="305" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="385" parent="305" name="PRIMARY">
+    <key id="406" parent="260" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="386" parent="306" name="id">
-      <AutoIncrement>27</AutoIncrement>
+    <column id="407" parent="261" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="387" parent="306" name="name">
+    <column id="408" parent="261" name="name">
       <Position>2</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="388" parent="306" name="keyword">
+    <column id="409" parent="261" name="keyword">
       <Position>3</Position>
       <StoredType>varchar(64)|0s</StoredType>
     </column>
-    <column id="389" parent="306" name="description">
+    <column id="410" parent="261" name="description">
       <Position>4</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <index id="390" parent="306" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="391" parent="306" name="PRIMARY">
+    <key id="411" parent="261" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="392" parent="307" name="id">
-      <AutoIncrement>3</AutoIncrement>
+    <column id="412" parent="262" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="393" parent="307" name="name">
+    <column id="413" parent="262" name="name">
       <Position>2</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="394" parent="307" name="keyword">
+    <column id="414" parent="262" name="keyword">
       <Position>3</Position>
       <StoredType>varchar(64)|0s</StoredType>
     </column>
-    <column id="395" parent="307" name="description">
+    <column id="415" parent="262" name="description">
       <Position>4</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <index id="396" parent="307" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="397" parent="307" name="PRIMARY">
+    <key id="416" parent="262" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="398" parent="308" name="role_id">
+    <column id="417" parent="263" name="role_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="399" parent="308" name="menu_id">
+    <column id="418" parent="263" name="menu_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="400" parent="308" name="FK_Reference_9">
+    <foreign-key id="419" parent="263" name="FK_Reference_9">
       <ColNames>role_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_role</RefTableName>
     </foreign-key>
-    <foreign-key id="401" parent="308" name="FK_Reference_10">
+    <foreign-key id="420" parent="263" name="FK_Reference_10">
       <ColNames>menu_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_menu</RefTableName>
     </foreign-key>
-    <index id="402" parent="308" name="PRIMARY">
-      <ColNames>role_id
-menu_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="403" parent="308" name="FK_Reference_10">
+    <index id="421" parent="263" name="FK_Reference_10">
       <ColNames>menu_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="404" parent="308" name="PRIMARY">
+    <key id="422" parent="263" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>role_id
+menu_id</UnderlyingIndexColNames>
     </key>
-    <column id="405" parent="309" name="role_id">
+    <column id="423" parent="264" name="role_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="406" parent="309" name="permission_id">
+    <column id="424" parent="264" name="permission_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="407" parent="309" name="FK_Reference_11">
+    <foreign-key id="425" parent="264" name="FK_Reference_11">
       <ColNames>role_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_role</RefTableName>
     </foreign-key>
-    <foreign-key id="408" parent="309" name="FK_Reference_12">
+    <foreign-key id="426" parent="264" name="FK_Reference_12">
       <ColNames>permission_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_permission</RefTableName>
     </foreign-key>
-    <index id="409" parent="309" name="PRIMARY">
-      <ColNames>role_id
-permission_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="410" parent="309" name="FK_Reference_12">
+    <index id="427" parent="264" name="FK_Reference_12">
       <ColNames>permission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="411" parent="309" name="PRIMARY">
+    <key id="428" parent="264" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>role_id
+permission_id</UnderlyingIndexColNames>
     </key>
-    <column id="412" parent="310" name="id">
-      <AutoIncrement>19</AutoIncrement>
+    <column id="429" parent="265" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="413" parent="310" name="name">
+    <column id="430" parent="265" name="name">
       <Position>2</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="414" parent="310" name="code">
+    <column id="431" parent="265" name="code">
       <Position>3</Position>
       <StoredType>varchar(8)|0s</StoredType>
     </column>
-    <column id="415" parent="310" name="helpCode">
+    <column id="432" parent="265" name="helpCode">
       <Position>4</Position>
       <StoredType>varchar(16)|0s</StoredType>
     </column>
-    <column id="416" parent="310" name="sex">
+    <column id="433" parent="265" name="sex">
       <Position>5</Position>
       <StoredType>char(1)|0s</StoredType>
     </column>
-    <column id="417" parent="310" name="age">
+    <column id="434" parent="265" name="age">
       <Position>6</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="418" parent="310" name="price">
+    <column id="435" parent="265" name="price">
       <Position>7</Position>
       <StoredType>float|0s</StoredType>
     </column>
-    <column id="419" parent="310" name="remark">
+    <column id="436" parent="265" name="remark">
       <Position>8</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="420" parent="310" name="attention">
+    <column id="437" parent="265" name="attention">
       <Position>9</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <column id="421" parent="310" name="img">
+    <column id="438" parent="265" name="img">
       <Position>10</Position>
       <StoredType>varchar(128)|0s</StoredType>
     </column>
-    <index id="422" parent="310" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="423" parent="310" name="PRIMARY">
+    <key id="439" parent="265" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="424" parent="311" name="setmeal_id">
+    <column id="440" parent="266" name="setmeal_id">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="425" parent="311" name="checkgroup_id">
+    <column id="441" parent="266" name="checkgroup_id">
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="426" parent="311" name="setmeal_key">
+    <foreign-key id="442" parent="266" name="setmeal_key">
       <ColNames>setmeal_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_setmeal</RefTableName>
     </foreign-key>
-    <foreign-key id="427" parent="311" name="checkgroup_key">
+    <foreign-key id="443" parent="266" name="checkgroup_key">
       <ColNames>checkgroup_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_checkgroup</RefTableName>
     </foreign-key>
-    <index id="428" parent="311" name="PRIMARY">
-      <ColNames>setmeal_id
-checkgroup_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="429" parent="311" name="checkgroup_key">
+    <index id="444" parent="266" name="checkgroup_key">
       <ColNames>checkgroup_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="430" parent="311" name="PRIMARY">
+    <key id="445" parent="266" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>setmeal_id
+checkgroup_id</UnderlyingIndexColNames>
     </key>
-    <column id="431" parent="312" name="id">
-      <AutoIncrement>4</AutoIncrement>
+    <column id="446" parent="267" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="432" parent="312" name="birthday">
+    <column id="447" parent="267" name="birthday">
       <Position>2</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="433" parent="312" name="gender">
+    <column id="448" parent="267" name="gender">
       <Position>3</Position>
       <StoredType>varchar(1)|0s</StoredType>
     </column>
-    <column id="434" parent="312" name="username">
+    <column id="449" parent="267" name="username">
       <Position>4</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="435" parent="312" name="password">
+    <column id="450" parent="267" name="password">
       <Position>5</Position>
       <StoredType>varchar(256)|0s</StoredType>
     </column>
-    <column id="436" parent="312" name="remark">
+    <column id="451" parent="267" name="remark">
       <Position>6</Position>
       <StoredType>varchar(32)|0s</StoredType>
     </column>
-    <column id="437" parent="312" name="station">
+    <column id="452" parent="267" name="station">
       <Position>7</Position>
       <StoredType>varchar(1)|0s</StoredType>
     </column>
-    <column id="438" parent="312" name="telephone">
+    <column id="453" parent="267" name="telephone">
       <Position>8</Position>
       <StoredType>varchar(11)|0s</StoredType>
     </column>
-    <index id="439" parent="312" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="440" parent="312" name="PRIMARY">
+    <key id="454" parent="267" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>id</UnderlyingIndexColNames>
     </key>
-    <column id="441" parent="313" name="user_id">
+    <column id="455" parent="268" name="user_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="442" parent="313" name="role_id">
+    <column id="456" parent="268" name="role_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>int(11)|0s</StoredType>
     </column>
-    <foreign-key id="443" parent="313" name="FK_Reference_7">
+    <foreign-key id="457" parent="268" name="FK_Reference_7">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_user</RefTableName>
     </foreign-key>
-    <foreign-key id="444" parent="313" name="FK_Reference_8">
+    <foreign-key id="458" parent="268" name="FK_Reference_8">
       <ColNames>role_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>t_role</RefTableName>
     </foreign-key>
-    <index id="445" parent="313" name="PRIMARY">
-      <ColNames>user_id
-role_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="446" parent="313" name="FK_Reference_8">
+    <index id="459" parent="268" name="FK_Reference_8">
       <ColNames>role_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="447" parent="313" name="PRIMARY">
+    <key id="460" parent="268" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+      <UnderlyingIndexColNames>user_id
+role_id</UnderlyingIndexColNames>
     </key>
   </database-model>
 </dataSource>
